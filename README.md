@@ -464,10 +464,13 @@ If this repo helped you or inspired you, please consider:
 <div>
 
 <br/>
-<img src="[![Star this Repo](https://img.shields.io/badge/⭐_Star_This_Repo-Give_a_Star!-6366F1?style=for-the-badge&logo=github&logoColor=black&labelColor=0D1117)](https://github.com/Hayat-array/DSA)" />
-<img src="https://img.shields.io/badge/%F0%9F%91%A5_Follow-Hayat--array-00D4FF?style=for-the-badge&logo=github&logoColor=black&labelColor=0D1117"/>
-<img src="https://img.shields.io/badge/%F0%9F%8C%90_Visit-codewithhsquare-6366F1?style=for-the-badge&logoColor=black&labelColor=0D1117"/>
+<p align="center">
 
+[![⭐ Star Repo](https://img.shields.io/badge/⭐_Star-Repo-6366F1?style=for-the-badge&labelColor=0D1117)](https://github.com/Hayat-array/DSA)
+[![👨‍💻 Follow](https://img.shields.io/badge/👨‍💻_Follow-Hayat--array-00D4FF?style=for-the-badge&labelColor=0D1117)](https://github.com/Hayat-array)
+[![🌐 Portfolio](https://img.shields.io/badge/🌐_Portfolio-codewithhsquare-6366F1?style=for-the-badge&labelColor=0D1117)](https://codewithhsquare.vercel.app/)
+
+</p>
 </div>
 <div align="center">
 💬 Daily Reminder
