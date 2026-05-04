@@ -1,5 +1,4 @@
 <div align="center">
-<div align="center">
 
 <!-- Main Heading SVG -->
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=800&size=36&duration=2800&pause=1000&color=6366F1&center=true&vCenter=true&width=900&lines=Hey+there!+I'm+Hayat+Ali+%F0%9F%91%8B;DSA+%E2%9E%A4+Interview+Prep+%E2%9E%A4+Problem+Solving;One+Problem+at+a+Time+%F0%9F%94%A5" alt="Main Header" />
@@ -9,7 +8,7 @@
 
 <br/>
 
-<!-- Modern Badge Row -->
+<!-- Modern Badge Row — ALL LINKS INCLUDED (GitHub, Portfolio, LeetCode, LinkedIn, Gmail) -->
 <p align="center">
   <a href="https://codewithhsquare.vercel.app/">
     <img src="https://img.shields.io/badge/🌐_Portfolio-6366F1?style=for-the-badge&logoColor=white" alt="Portfolio" />
@@ -17,17 +16,18 @@
   <a href="https://github.com/Hayat-array">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  <a href="https://leetcode.com/u/hayat_ali/">
+  <a href="https://leetcode.com/u/Hayat-Ali/">
     <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white" alt="LeetCode" />
   </a>
-  <a href="https://linkedin.com/in/hayat-ali">
+  <a href="https://www.linkedin.com/in/hayat-ali-887aab294">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="mailto:hayatali123786@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
   </a>
 </p>
 
 ---
-
-
 
 <div align="center">
 
@@ -71,7 +71,7 @@ I'm **Hayat Ali**, a passionate programmer from **codewithhsquare** — on a mis
       <strong>codewithhsquare</strong><br/>
       <sub>Code. Build. Ship. Repeat.</sub>
     </td>
-  </tr>
+  </table>
 </table>
 
 </div>
@@ -233,20 +233,18 @@ I'm **Hayat Ali**, a passionate programmer from **codewithhsquare** — on a mis
 
 ## 📈 Topic Progress
 
-</div>
-
-```
-📦  Arrays & Hashing    ████████████░░░░  75%   ✅ Strong
-🔗  Linked Lists        ███████████░░░░░  68%   ✅ Good
-🌳  Trees & BST         █████████░░░░░░░  58%   🔄 In Progress
-🔄  Two Pointers        ████████████████  95%   ✅ Mastered
-🪟  Sliding Window      ██████████░░░░░░  63%   🔄 In Progress
-📚  Stacks & Queues     █████████░░░░░░░  58%   🔄 In Progress
-🔍  Binary Search       ████████████░░░░  78%   ✅ Strong
-🔢  Dynamic Programming ██████░░░░░░░░░░  38%   🎯 Focusing
-📊  Graphs & BFS/DFS    ████████░░░░░░░░  50%   🔄 In Progress
-🧩  Backtracking        █████░░░░░░░░░░░  32%   🎯 Up Next
-```
+| Topic | Progress | Status |
+|------|--------|--------|
+| 📦 Arrays & Hashing | 75% | ✅ Strong |
+| 🔗 Linked Lists | 68% | ✅ Good |
+| 🌳 Trees & BST | 58% | 🔄 In Progress |
+| 🔄 Two Pointers | 95% | 🏆 Mastered |
+| 🪟 Sliding Window | 63% | 🔄 In Progress |
+| 📚 Stacks & Queues | 58% | 🔄 In Progress |
+| 🔍 Binary Search | 78% | ✅ Strong |
+| 🔢 Dynamic Programming | 38% | 🎯 Focusing |
+| 📊 Graphs & BFS/DFS | 50% | 🔄 In Progress |
+| 🧩 Backtracking | 32% | 🚀 Up Next |
 
 ---
 
@@ -374,19 +372,18 @@ I'm **Hayat Ali**, a passionate programmer from **codewithhsquare** — on a mis
 
 <div align="center">
 
+
 ## 🎯 Future Goals
 
-</div>
-
-- [x] Solve 250+ LeetCode problems ✅
-- [ ] 🎯 Reach 400+ problems solved
-- [ ] 💪 Master Dynamic Programming fully
-- [ ] 🌳 Complete all Graph algorithms
-- [ ] 🏆 Achieve LeetCode Knight badge
-- [ ] 🚀 Crack interviews at top tech companies (FAANG)
-- [ ] 📖 Complete Striver A–Z DSA Sheet 100%
-
----
+| Goal | Status |
+|------|--------|
+| ✔️ 250+ Problems Solved | DONE |
+| 🎯 400+ Problems | NEXT |
+| 💪 Dynamic Programming | FOCUS |
+| 🌳 Graph Algorithms | PENDING |
+| 🏆 LeetCode Knight | GOAL |
+| 🚀 FAANG Placement | TARGET |
+| 📖 Striver A–Z Sheet | IN PROGRESS |
 
 <div align="center">
 
@@ -426,12 +423,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-
 </details>
-
-<details>
+<details> 
 <summary><strong>📊 Auto Problem Counter Workflow (count-problems.yml)</strong></summary>
-
+  
 ```yaml
 name: Count DSA Problems
 on:
@@ -461,43 +456,40 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-
 </details>
-
----
-
 <div align="center">
-
-## ⭐ Support My Work
-
+⭐ Support My Work
 If this repo helped you or inspired you, please consider:
-
-[![Star this Repo](https://img.shields.io/badge/⭐_Star_This_Repo-Give_a_Star!-6366F1?style=for-the-badge&logo=github&logoColor=black&labelColor=0D1117)](https://github.com/Hayat-array)
-[![Follow on GitHub](https://img.shields.io/badge/👥_Follow-Hayat--array-00D4FF?style=for-the-badge&logo=github&logoColor=black&labelColor=0D1117)](https://github.com/Hayat-array)
-[![Visit Portfolio](https://img.shields.io/badge/🌐_Visit-codewithhsquare-6366F1?style=for-the-badge&logoColor=black&labelColor=0D1117)](https://codewithhsquare.vercel.app/)
-
 </div>
-
----
-
-<div align="center">
-
-## 💬 Daily Reminder
-
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Quote"/>
-
-<br/><br/>
-
-> _"The expert in anything was once a beginner who refused to give up."_
-> 
-> **Keep grinding. Stay consistent. Your breakthrough is one problem away. 🔥**
+<div>
 
 <br/>
+<img src="https://img.shields.io/badge/%E2%AD%90_Star_This_Repo-Give_a_Star!-6366F1?style=for-the-badge&logo=github&logoColor=black&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/%F0%9F%91%A5_Follow-Hayat--array-00D4FF?style=for-the-badge&logo=github&logoColor=black&labelColor=0D1117"/>
+<img src="https://img.shields.io/badge/%F0%9F%8C%90_Visit-codewithhsquare-6366F1?style=for-the-badge&logoColor=black&labelColor=0D1117"/>
 
----
+</div>
+<div align="center">
+💬 Daily Reminder
+
+  
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Quote"/>
+
+
+
+"The expert in anything was once a beginner who refused to give up."
+
+Keep grinding. Stay consistent. Your breakthrough is one problem away. 🔥
+
 
 <sub>Made with ❤️ by <a href="https://codewithhsquare.vercel.app/"><strong>Hayat Ali</strong> @ codewithhsquare</a> · Updated automatically via GitHub Actions</sub>
 
-<img src="https://komarev.com/ghpvc/?username=Hayat-array&color=6366F1&style=for-the-badge&label=Profile+Views" alt="Profile Views"/>
+<div align="center">
+
+### 👀 Profile Visitors
+
+<a href="https://github.com/Hayat-array">
+  <img src="https://komarev.com/ghpvc/?username=Hayat-array&color=6366F1&style=for-the-badge&label=Visitors" />
+</a>
 
 </div>
