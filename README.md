@@ -464,7 +464,7 @@ If this repo helped you or inspired you, please consider:
 <div>
 
 <br/>
-<img src="https://img.shields.io/badge/%E2%AD%90_Star_This_Repo-Give_a_Star!-6366F1?style=for-the-badge&logo=github&logoColor=black&labelColor=0D1117" />
+<img src="[![Star this Repo](https://img.shields.io/badge/⭐_Star_This_Repo-Give_a_Star!-6366F1?style=for-the-badge&logo=github&logoColor=black&labelColor=0D1117)](https://github.com/Hayat-array/DSA)" />
 <img src="https://img.shields.io/badge/%F0%9F%91%A5_Follow-Hayat--array-00D4FF?style=for-the-badge&logo=github&logoColor=black&labelColor=0D1117"/>
 <img src="https://img.shields.io/badge/%F0%9F%8C%90_Visit-codewithhsquare-6366F1?style=for-the-badge&logoColor=black&labelColor=0D1117"/>
 
