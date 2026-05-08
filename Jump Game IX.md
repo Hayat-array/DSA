@@ -1,109 +1,71 @@
-# 3660. Jump Game IX
+# 🚀 3660. Jump Game IX
 
 <div align="center">
 
-# 🚀 Jump Game IX
+### **LeetCode Medium — Reachability Analysis**
 
-### LeetCode Medium
+![Array](https://img.shields.io/badge/Array-Problem-blue?style=for-the-badge&logo=leetcode)
+![Greedy](https://img.shields.io/badge/Greedy-Approach-green?style=for-the-badge)
+![Graph](https://img.shields.io/badge/Graph-Thinking-orange?style=for-the-badge)
+![C++](https://img.shields.io/badge/C++-Solutions-red?style=for-the-badge&logo=cplusplus)
 
-<img src="https://img.shields.io/badge/Array-Problem-blue?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Greedy-Approach-green?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Graph-Thinking-orange?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/C++-Solutions-red?style=for-the-badge"/>
+---
 
 </div>
 
----
+## 📌 Problem Statement
 
-# 📌 Problem Statement
+You are given an integer array `nums`. From any index `i`, you can jump to another index `j` under the following rules:
 
-You are given an integer array `nums`.
+> [!IMPORTANT]
+> **The Jump Rules:**
+> *   **Forward ($j > i$):** Allowed only if $nums[j] < nums[i]$.
+> *   **Backward ($j < i$):** Allowed only if $nums[j] > nums[i]$.
 
-From any index `i`, you can jump to another index `j` under the following rules:
-
-* Jump to index `j` where `j > i` is allowed only if:
-
-```math
-nums[j] < nums[i]
-```
-
-* Jump to index `j` where `j < i` is allowed only if:
-
-```math
-nums[j] > nums[i]
-```
-
-For each index `i`, find the maximum value reachable by following any sequence of valid jumps.
-
-Return an array `ans` where:
-
-```text
-ans[i] = maximum reachable value starting from i
-```
+**Goal:** For each index `i`, find the maximum value reachable through any sequence of jumps.
+**Return:** An array `ans` where `ans[i]` is the maximum value.
 
 ---
 
-# 🧠 Understanding the Problem
+## 🧠 Logical Breakdown
 
-The jumps depend on:
-
-* direction
-* value comparison
-* chain connections
-
-Even if two indices are not directly connected, they may become connected through intermediate jumps.
+The problem is essentially asking us to find **Connected Components** in a graph.
+1.  **Symmetry:** If you can jump $i \to j$, notice the conditions often allow a path back.
+2.  **Transitivity:** If $A$ can reach $B$ and $B$ can reach $C$, then $A$ can reach $C$.
+3.  **Result:** Every index in a connected component will have the same answer: the **Maximum Value** within that component.
 
 ---
 
-# 🔍 Example Visualization
+## 🔍 Example Trace
 
-## Input
+**Input:** `nums = [2, 3, 1]`
 
-```text
-nums = [2,3,1]
-```
+| Index | Value | Connection Logic | Reachable Set |
+| :--- | :--- | :--- | :--- |
+| **0** | 2 | Can jump to index 2 ($1 < 2$) | {0, 2} |
+| **2** | 1 | Can jump to index 1 ($3 > 1$) | {0, 2, 1} |
 
----
-
-## Valid Jumps
-
-```text
-Index:   0   1   2
-Value:   2   3   1
-
-0 -----> 2     because 1 < 2
-2 -----> 1     because 3 > 1
-```
-
-So:
-
-```text
-0 ↔ 2 ↔ 1
-```
-
-All indices become connected.
-
-Maximum reachable value:
-
-```text
-3
-```
-
-Final Answer:
-
-```text
-[3,3,3]
-```
+**Final Connectivity:** `0 ↔ 2 ↔ 1`
+All indices reach each other. The highest value is **3**.
+**Output:** `[3, 3, 3]`
 
 ---
 
-# 🚀 Approaches
+## 🚀 Comparison of Approaches
 
-1. Brute Force DFS
-2. Better Approach (DSU / Union Find)
-3. Optimal Greedy Approach
+| Approach | Logic | Complexity | Verdict |
+| :--- | :--- | :--- | :--- |
+| **🥉 Brute Force** | DFS/BFS from every index | $O(N^2)$ | **TLE** |
+| **🥈 DSU** | Union-Find on sorted indices | $O(N \log N)$ | **Pass** |
+| **🥇 Greedy** | Prefix-Max & Suffix-Min | $O(N)$ | **Optimal** |
 
 ---
+
+<div align="center">
+
+### 🎬 **Interactive Visualization**
+[**Launch Visualizer Interface**](https://visualizers-jump-game-ix-index-html.vercel.app/)
+</div>
 
 # 🥉 Approach 1 — Brute Force DFS
 
