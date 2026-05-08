@@ -83,6 +83,13 @@ n - 1
 ```
 
 ---
+<div align="center">
+
+## 🌐 Live Visualization
+
+### 🔗 [Open Interactive Visualizer](https://minimum-jumps-via-prime-teleportati.vercel.app/)
+
+</div>
 
 # 🧠 Intuition
 
