@@ -1,11 +1,19 @@
-# 🚀 Add Two Numbers – Linked List (LeetCode 2)
+# 🚀 Add Two Numbers – Linked List
 
 <div align="center">
 
-## 👨‍💻 by **codewithhsquare (Hayat Ali)**
+![LeetCode](https://img.shields.io/badge/LeetCode-2-orange?style=for-the-badge\&logo=leetcode)
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow?style=for-the-badge)
+![Topic](https://img.shields.io/badge/Topic-Linked%20List-blue?style=for-the-badge)
+![Language](https://img.shields.io/badge/Language-C++-00599C?style=for-the-badge\&logo=cplusplus)
 
-🔥 *Striver DSA Sheet Journey*
-💡 *Mastering Linked Lists Step by Step*
+# 👨‍💻 CodeWithHSquare
+
+### ✨ Mastering Linked Lists Step by Step
+
+🔥 Beginner Friendly
+🚀 Interview Focused
+💡 Multiple Approaches Included
 
 </div>
 
@@ -13,13 +21,13 @@
 
 # 📌 Problem Statement
 
-You are given two non-empty linked lists representing two non-negative integers.
+You are given two **non-empty linked lists** representing two non-negative integers.
 
-* Digits are stored in **reverse order**
-* Each node contains a single digit
-* Add the two numbers and return the sum as a linked list
+* The digits are stored in **reverse order**.
+* Each node contains a **single digit**.
+* Add the two numbers and return the sum as a linked list.
 
-You may assume the two numbers do not contain leading zeroes except the number `0`.
+You may assume the two numbers do not contain any leading zero except the number `0` itself.
 
 ---
 
@@ -67,26 +75,47 @@ Output:
 
 ---
 
+# 🎯 Visualization
+
+## 🔗 Interactive Visualization
+
+### 🌐 [https://add-two-numbers-linked-list-one.vercel.app/](https://add-two-numbers-linked-list-one.vercel.app/)
+
+---
+
 # 🧠 Understanding the Problem
 
-Since digits are stored in reverse order:
+The linked lists store numbers in reverse order.
 
 ```text
 [2,4,3] → 342
 [5,6,4] → 465
 ```
 
-Addition:
+Now add them:
 
 ```text
 342 + 465 = 807
 ```
 
-Return in reverse order:
+Return the result again in reverse order:
 
 ```text
 [7,0,8]
 ```
+
+---
+
+# 🔥 Core Idea
+
+This problem works exactly like elementary school addition.
+
+At every step:
+
+✅ Add current digits
+✅ Add carry
+✅ Store last digit
+✅ Forward carry to next node
 
 ---
 
@@ -96,58 +125,100 @@ Return in reverse order:
 
 # 💡 Intuition
 
-We perform addition exactly like elementary school addition.
+We traverse both linked lists together.
 
-At every step:
+At each step:
 
-* Add digits
-* Add carry
-* Store current digit
-* Forward carry to next node
+```text
+sum = digit1 + digit2 + carry
+```
+
+Then:
+
+```text
+digit = sum % 10
+carry = sum / 10
+```
+
+Store `digit` in the answer linked list.
 
 ---
 
 # ❓ What Information Do I Need At Each Step?
 
-| Information        | Purpose                 |
-| ------------------ | ----------------------- |
-| Current node of l1 | Get first digit         |
-| Current node of l2 | Get second digit        |
-| Carry              | Handle overflow         |
-| Sum                | Calculate current digit |
-| New node           | Store answer digit      |
+| Information        | Why Needed         |
+| ------------------ | ------------------ |
+| Current node of l1 | First digit        |
+| Current node of l2 | Second digit       |
+| Carry              | Handle overflow    |
+| Sum                | Current addition   |
+| New node           | Store answer digit |
 
 ---
 
 # ⚡ Algorithm
 
-## Step-by-Step
+## Step-by-Step Algorithm
 
-1. Create a dummy node.
-2. Initialize `carry = 0`.
-3. Traverse both linked lists.
-4. Take values from current nodes.
-5. Compute:
+### Step 1
+
+Create a dummy node.
+
+### Step 2
+
+Initialize:
+
+```cpp
+carry = 0
+```
+
+### Step 3
+
+Traverse while:
+
+```cpp
+l1 != NULL || l2 != NULL || carry != 0
+```
+
+### Step 4
+
+Take values from linked lists.
+
+### Step 5
+
+Compute total sum.
 
 ```text
 sum = val1 + val2 + carry
 ```
 
-6. Store:
+### Step 6
+
+Store current digit.
 
 ```text
 digit = sum % 10
 ```
 
-7. Update carry:
+### Step 7
+
+Update carry.
 
 ```text
 carry = sum / 10
 ```
 
-8. Create new node with digit.
-9. Move pointers forward.
-10. Return `dummy->next`.
+### Step 8
+
+Create new node.
+
+### Step 9
+
+Move pointers forward.
+
+### Step 10
+
+Return answer list.
 
 ---
 
@@ -170,7 +241,10 @@ public:
 
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 
+        // Dummy node for result
         ListNode* dummy = new ListNode(0);
+
+        // Pointer to build answer
         ListNode* temp = dummy;
 
         int carry = 0;
@@ -179,18 +253,22 @@ public:
 
             int sum = carry;
 
+            // Add value from l1
             if(l1 != NULL) {
                 sum += l1->val;
                 l1 = l1->next;
             }
 
+            // Add value from l2
             if(l2 != NULL) {
                 sum += l2->val;
                 l2 = l2->next;
             }
 
+            // Update carry
             carry = sum / 10;
 
+            // Create node for current digit
             ListNode* newNode = new ListNode(sum % 10);
 
             temp->next = newNode;
@@ -204,7 +282,7 @@ public:
 
 ---
 
-# 🔍 Dry Run
+# 🔍 Detailed Dry Run
 
 ## Input
 
@@ -215,16 +293,18 @@ l2 = [5,6,4]
 
 ---
 
-## Iteration 1
+# 🟢 Iteration 1
 
 ```text
 2 + 5 + 0 = 7
-
-digit = 7
-carry = 0
 ```
 
-Result:
+| Value | Result |
+| ----- | ------ |
+| Digit | 7      |
+| Carry | 0      |
+
+Answer List:
 
 ```text
 7
@@ -232,16 +312,18 @@ Result:
 
 ---
 
-## Iteration 2
+# 🟢 Iteration 2
 
 ```text
 4 + 6 + 0 = 10
-
-digit = 0
-carry = 1
 ```
 
-Result:
+| Value | Result |
+| ----- | ------ |
+| Digit | 0      |
+| Carry | 1      |
+
+Answer List:
 
 ```text
 7 → 0
@@ -249,16 +331,18 @@ Result:
 
 ---
 
-## Iteration 3
+# 🟢 Iteration 3
 
 ```text
 3 + 4 + 1 = 8
-
-digit = 8
-carry = 0
 ```
 
-Result:
+| Value | Result |
+| ----- | ------ |
+| Digit | 8      |
+| Carry | 0      |
+
+Final Answer:
 
 ```text
 7 → 0 → 8
@@ -278,10 +362,11 @@ Result:
 # ✅ Why This Approach is Optimal?
 
 ✔ Single traversal
+✔ Handles unequal lengths
 ✔ No reversing needed
-✔ Handles carry efficiently
-✔ Works for unequal sizes
-✔ Simple implementation
+✔ Easy carry handling
+✔ Beginner friendly
+✔ Interview efficient
 
 ---
 
@@ -291,28 +376,23 @@ Result:
 
 # 💡 Intuition
 
-Instead of loops, recursion automatically moves through linked lists.
+Instead of loops, recursion automatically moves through the linked lists.
 
 Each recursive call handles:
 
 * Current digits
 * Carry
-* Next nodes
+* Remaining linked lists
 
 ---
 
 # ⚡ Recursive Algorithm
 
 1. If both lists and carry are empty → return NULL
-2. Add current values and carry
-3. Create node using:
-
-```text
-digit = sum % 10
-```
-
-4. Recursive call for next nodes
-5. Attach returned node
+2. Add current digits and carry
+3. Create current node
+4. Recursively solve next nodes
+5. Return current node
 
 ---
 
@@ -366,11 +446,11 @@ public:
 
 ---
 
-# ⚠️ Recursive Drawbacks
+# ⚠️ Drawbacks of Recursive Solution
 
-❌ Uses recursive stack space
+❌ Uses recursive stack memory
 ❌ Slightly slower
-❌ Risk of stack overflow for huge input
+❌ Risk of stack overflow for large inputs
 
 ---
 
@@ -380,60 +460,49 @@ public:
 
 # 💡 Idea
 
-1. Convert linked list into integer
-2. Add integers
+1. Convert linked lists into integers
+2. Add both numbers
 3. Convert answer back into linked list
 
 ---
 
-# ❌ Why This Fails?
+# ❌ Why This Approach Fails?
 
-Numbers can become extremely large.
+Large numbers may overflow.
 
 Example:
 
 ```text
-9999999999999999999999999
+999999999999999999999999999999
 ```
 
-Integer overflow occurs.
+Most integer types cannot store such large values.
 
 ---
 
-# ❌ Complexity
+# 🏆 Best Approach Comparison
 
-| Complexity       | Value  |
-| ---------------- | ------ |
-| Time Complexity  | O(N+M) |
-| Space Complexity | O(1)   |
-
-But practically unsafe.
-
----
-
-# 🏆 Best Approach
-
-| Approach           | Recommended |
-| ------------------ | ----------- |
-| Iterative          | ✅ BEST      |
-| Recursive          | ✅ Good      |
-| Integer Conversion | ❌ Avoid     |
+| Approach           | Time | Space | Recommended |
+| ------------------ | ---- | ----- | ----------- |
+| Iterative          | O(N) | O(N)  | ✅ BEST      |
+| Recursive          | O(N) | O(N)  | ✅ Good      |
+| Integer Conversion | O(N) | O(1)  | ❌ Unsafe    |
 
 ---
 
-# 🎯 Key Interview Points
+# 🎯 Important Interview Concepts
 
-## Important Concepts
+## 1️⃣ Dummy Node
 
-### 1️⃣ Dummy Node
+Dummy node simplifies linked list insertion.
 
-Helps simplify insertion.
+Without dummy node, handling head becomes complicated.
 
 ---
 
-### 2️⃣ Carry Handling
+## 2️⃣ Carry Handling
 
-Very important:
+Example:
 
 ```text
 9 + 9 = 18
@@ -442,13 +511,13 @@ Very important:
 Store:
 
 ```text
-8
-carry = 1
+Digit = 8
+Carry = 1
 ```
 
 ---
 
-### 3️⃣ Unequal Length Lists
+## 3️⃣ Unequal Length Lists
 
 Loop continues while:
 
@@ -456,17 +525,26 @@ Loop continues while:
 l1 || l2 || carry
 ```
 
+This handles:
+
+```text
+[9,9,9]
+[1]
+```
+
 ---
 
-### 4️⃣ Reverse Storage Advantage
+## 4️⃣ Reverse Storage Advantage
 
-No need to reverse lists.
+Because digits are reversed, addition becomes easy.
+
+No need to reverse linked lists.
 
 ---
 
 # 🧠 Important Edge Cases
 
-## Case 1
+## Edge Case 1
 
 ```text
 [0] + [0]
@@ -480,7 +558,7 @@ Output:
 
 ---
 
-## Case 2
+## Edge Case 2
 
 ```text
 [9,9,9] + [1]
@@ -494,9 +572,9 @@ Output:
 
 ---
 
-## Case 3
+## Edge Case 3
 
-Different lengths:
+Different sizes:
 
 ```text
 [2,4]
@@ -509,22 +587,22 @@ Different lengths:
 
 ## Q1. What if digits are NOT reversed?
 
-Then:
+Possible solutions:
 
-* Reverse both lists first
+* Reverse both lists
 * OR use stacks
 
 ---
 
 ## Q2. Why use dummy node?
 
-To avoid handling special head cases separately.
+To simplify insertion logic.
 
 ---
 
-## Q3. Can we solve without extra list?
+## Q3. Can we solve in-place?
 
-Possible but messy and unsafe.
+Possible, but implementation becomes complicated.
 
 ---
 
@@ -533,17 +611,33 @@ Possible but messy and unsafe.
 This problem teaches:
 
 ✅ Linked List Traversal
-✅ Carry Handling
-✅ Dummy Node Technique
-✅ Simulation Problems
+✅ Carry Propagation
+✅ Simulation Technique
+✅ Dummy Node Pattern
 ✅ Recursive Thinking
+✅ Pointer Manipulation
+
+---
+
+# 📚 Topics Covered
+
+* Linked List
+* Simulation
+* Math
+* Recursion
+* Iteration
+* Carry Handling
 
 ---
 
 <div align="center">
 
-# ⭐ If this helped you, star your DSA repository ⭐
+# ⭐ Star This Repository If You Found It Helpful ⭐
 
-### 🔥 Keep Grinding — FAANG Journey Continues 🚀
+## 🚀 Keep Practicing DSA
+
+### 💖 Made with dedication by CodeWithHSquare
+
+🔥 Consistency + Practice = Success 🔥
 
 </div>
