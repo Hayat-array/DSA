@@ -1,41 +1,62 @@
 # 🔢 2553. Separate the Digits in an Array
 
-> LeetCode Easy Problem
-> Topic: Array, Simulation
-> Difficulty: Easy
+<div align="center">
+
+![LeetCode](https://img.shields.io/badge/LeetCode-Easy-brightgreen?style=for-the-badge\&logo=leetcode)
+![C++](https://img.shields.io/badge/C%2B%2B-17-blue?style=for-the-badge\&logo=c%2B%2B)
+![DSA](https://img.shields.io/badge/DSA-Array-orange?style=for-the-badge)
+![CodeWithHSquare](https://img.shields.io/badge/CodeWithHSquare-DSA-red?style=for-the-badge)
+
+</div>
+
+---
+
+# 🌟 Problem Overview
+
+Given an array of positive integers `nums`, return an array containing all digits of every number in the same order.
+
+Each number must be separated digit-by-digit while preserving the original sequence.
+
+---
 
 ---
 
 # 📘 Problem Statement
 
-Given an array of positive integers `nums`, return an array `answer` that consists of the digits of each integer in `nums` after separating them in the same order they appear.
+You are given an array of positive integers `nums`.
 
-To separate the digits of an integer means extracting every digit individually while maintaining the original order.
+Your task is to create a new array `answer` such that:
+
+* Every integer in `nums` is separated into individual digits.
+* Digits must appear in the same order as the original number.
+* Final order of all digits must remain preserved.
 
 ---
 
 # 🧾 Example 1
 
-## Input
+## ✅ Input
 
 ```cpp
 nums = [13,25,83,77]
 ```
 
-## Output
+## ✅ Output
 
 ```cpp
 [1,3,2,5,8,3,7,7]
 ```
 
-## Explanation
+## 🔍 Explanation
 
-* 13 → [1,3]
-* 25 → [2,5]
-* 83 → [8,3]
-* 77 → [7,7]
+| Number | Separated Digits |
+| ------ | ---------------- |
+| 13     | [1,3]            |
+| 25     | [2,5]            |
+| 83     | [8,3]            |
+| 77     | [7,7]            |
 
-Final Answer:
+### Final Answer
 
 ```cpp
 [1,3,2,5,8,3,7,7]
@@ -45,17 +66,21 @@ Final Answer:
 
 # 🧾 Example 2
 
-## Input
+## ✅ Input
 
 ```cpp
 nums = [7,1,3,9]
 ```
 
-## Output
+## ✅ Output
 
 ```cpp
 [7,1,3,9]
 ```
+
+## 🔍 Explanation
+
+All numbers already contain a single digit.
 
 ---
 
@@ -68,48 +93,73 @@ nums = [7,1,3,9]
 
 ---
 
-# 🧠 Understanding the Problem
+# 🧠 Problem Understanding
 
 We need to:
 
-1. Traverse every number in the array.
-2. Extract all digits from that number.
-3. Store digits in the same order.
-4. Return the final digit array.
+✅ Traverse every number
+✅ Extract all digits
+✅ Maintain correct order
+✅ Store digits in a new array
+
+---
+
+# ✨ Visualization Project
+
+<div align="center">
+
+## 🚀 Interactive Visualization
+
+### 🔗 [https://separate-the-digits-in-an-array.vercel.app/](https://separate-the-digits-in-an-array.vercel.app/)
+
+</div>
 
 ---
 
 # ❓ What Information Do We Need at Each Step?
 
-| Step | Required Information           |
-| ---- | ------------------------------ |
-| 1    | Current number from array      |
-| 2    | Digits inside the number       |
-| 3    | Correct order of digits        |
-| 4    | Store digits into final answer |
+| Step | Required Information          |
+| ---- | ----------------------------- |
+| 1    | Current number from array     |
+| 2    | Individual digits of number   |
+| 3    | Correct order of digits       |
+| 4    | Store digits in answer vector |
 
 ---
 
-# 🚀 Approach 1 — String Conversion (Easy & Beginner Friendly)
+# 🚀 Approach 1 — String Conversion Method
 
-## 💡 Idea
+<div align="center">
 
-* Convert number into string.
-* Traverse each character.
-* Convert character back to integer digit.
-* Store into answer vector.
+## ⭐ Beginner Friendly Approach
+
+</div>
+
+---
+
+# 💡 Idea
+
+Convert every number into a string.
+
+Then:
+
+* Traverse every character.
+* Convert character back to integer.
+* Store into result vector.
 
 ---
 
 # ✅ Algorithm
 
+```text
 1. Create an empty result vector.
 2. Traverse every number in nums.
-3. Convert number to string.
-4. Traverse characters of string.
-5. Convert character to digit using `c - '0'`.
+3. Convert number into string.
+4. Traverse each character.
+5. Convert character into digit.
 6. Push digit into result.
 7. Return result.
+```
 
 ---
 
@@ -145,26 +195,40 @@ public:
 
 ---
 
-# 🚀 Approach 2 — Using Mathematics (Without String)
+# 🚀 Approach 2 — Mathematical Digit Extraction
 
-## 💡 Idea
+<div align="center">
 
-* Extract digits using `% 10`.
-* Digits come in reverse order.
-* Reverse temporary vector.
-* Add digits into final answer.
+## ⭐ No String Conversion
+
+</div>
+
+---
+
+# 💡 Idea
+
+Use mathematics:
+
+* `% 10` gives last digit.
+* `/ 10` removes last digit.
+
+Since digits come in reverse order:
+
+➡ Reverse temporary vector.
 
 ---
 
 # ✅ Algorithm
 
+```text
 1. Create result vector.
 2. Traverse every number.
-3. Extract digits using modulo `% 10`.
-4. Store digits into temporary vector.
+3. Extract digits using modulo.
+4. Store digits in temporary vector.
 5. Reverse temporary vector.
-6. Append into result.
-7. Return result.
+6. Append digits to result.
+7. Return answer.
+```
 
 ---
 
@@ -209,20 +273,26 @@ public:
 
 # 🚀 Approach 3 — Optimized Reverse Traversal Trick
 
-## 💡 Idea
+<div align="center">
 
-This is a clever mathematical optimization.
+## ⭐ Clever Mathematical Optimization
+
+</div>
+
+---
+
+# 💡 Core Observation
 
 Normally:
 
-* Digits extracted using `%10` come reversed.
-* So we reverse them.
+* `%10` extracts digits in reverse order.
+* So we reverse digits later.
 
 But here:
 
-* We traverse the original array backward.
-* Extract reversed digits.
-* Finally reverse the whole result array.
+✅ Traverse original array backward
+✅ Extract reversed digits
+✅ Reverse final result once
 
 Both reversals cancel each other.
 
@@ -230,11 +300,13 @@ Both reversals cancel each other.
 
 # ✅ Algorithm
 
-1. Traverse array from back to front.
-2. Extract digits using `% 10`.
-3. Store directly into result.
-4. Reverse the final result vector.
+```text
+1. Traverse nums from back to front.
+2. Extract digits using %10.
+3. Push digits directly into result.
+4. Reverse final result vector.
 5. Return answer.
+```
 
 ---
 
@@ -275,7 +347,7 @@ public:
 
 # 🔍 Dry Run
 
-## Input
+# ✅ Input
 
 ```cpp
 nums = [13,25]
@@ -283,17 +355,17 @@ nums = [13,25]
 
 ---
 
-## Process
+# ⚙ Step-by-Step Process
 
-### Traverse Backward
+## Traverse Backward
 
-### 25
+### Number = 25
 
 Extract digits:
 
 ```cpp
-5
-2
+25 % 10 = 5
+2 % 10 = 2
 ```
 
 Result:
@@ -304,13 +376,13 @@ Result:
 
 ---
 
-### 13
+### Number = 13
 
 Extract digits:
 
 ```cpp
-3
-1
+13 % 10 = 3
+1 % 10 = 1
 ```
 
 Result:
@@ -321,7 +393,7 @@ Result:
 
 ---
 
-## Reverse Final Array
+# 🔄 Reverse Final Array
 
 ```cpp
 [1,3,2,5]
@@ -331,37 +403,59 @@ Result:
 
 ---
 
-# 🎯 Key Interview Points
+# 🎯 Interview Tips
 
-✔ Maintain digit order carefully
-✔ `%10` extracts digits in reverse order
-✔ String method is easiest
+✔ Maintain correct order carefully
+✔ `%10` extracts digits from right side
+✔ String method is easiest to explain
 ✔ Math method shows strong fundamentals
-✔ Reverse traversal trick is clever and optimized
+✔ Reverse traversal trick impresses interviewers
+
+---
+
+# 🏆 Key Learnings
+
+After solving this problem, you learn:
+
+* Array Traversal
+* Digit Extraction
+* Reversing Techniques
+* Simulation Problems
+* Multiple Approach Thinking
 
 ---
 
 # 🏁 Final Thoughts
 
-This problem is a great beginner-level array and simulation problem.
+This is an excellent beginner-level problem for improving:
 
-It teaches:
-
-* Digit extraction
-* Array traversal
-* Reversing techniques
-* Multiple problem-solving approaches
+✅ Logical thinking
+✅ Array manipulation
+✅ Mathematical operations
+✅ Problem-solving confidence
 
 ---
 
-# ⭐ If You Found This Helpful
+<div align="center">
 
-Give this repository a ⭐ and follow for more DSA solutions.
+# ⭐ Support the Repository
+
+If you found this helpful:
+
+⭐ Star the repository
+🍴 Fork the project
+📢 Share with friends
+
+</div>
 
 ---
 
 # 👨‍💻 Author
 
-## CodeWithHSquare
+<div align="center">
 
-🚀 DSA | Web Development | AI/ML | Competitive Programming
+# CodeWithHSquare
+
+🚀 DSA | Competitive Programming | AI/ML | Web Development
+
+</div>
